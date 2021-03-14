@@ -22,7 +22,13 @@ module.exports = {
                     // Compiles Sass to CSS
                     "sass-loader",
                 ]
-            }
+            },
+            {
+                test: /\.(jpg|png)$/,
+                use: {
+                    loader: 'url-loader',
+                },
+            },
         ]
     },
     resolve: { extensions: ['*', '.js', '.jsx'] },

@@ -1,10 +1,11 @@
 import React from 'react'
 import { hot } from 'react-hot-loader'
 import './App.scss'
+import Layout from './components/common/layout/Layout'
 
 const App = () => (
     <div className="app">
-        <h1>UDEN!!!</h1>
+        <Layout />
     </div>
 );
 
