@@ -4,6 +4,7 @@ import facebook from '../../assets/facebook.svg'
 import google from '../../assets/google.svg'
 import linkedin from '../../assets/linkedin.svg'
 const Register = () => {
+
     return (
         <div className="col-md-12">
             <div className="row">
