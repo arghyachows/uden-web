@@ -1,9 +1,10 @@
 import React from 'react'
 import './Content.scss'
+import Register from '../../login/Register'
 
 const Content = () => (
     <div>
-        <h1>Content</h1>
+        <Register />
     </div>
 )
 
