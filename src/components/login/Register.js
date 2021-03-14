@@ -6,7 +6,7 @@ import linkedin from '../../assets/linkedin.svg'
 
 const { useState } = React
 
-const Register = () => {
+const Register = ({ onPageChange, page }) => {
 
     const [changeType, setchangeType] = useState('Individual')
 
@@ -71,7 +71,9 @@ const Register = () => {
                 <div className="col-md-12 mx-auto">
                     <div className="row">
                         <div className="col-md-4 mx-auto">
-                            <button className={`btn btn-block ${changeType === 'Individual' ? 'btn-warning' : changeType === 'Corporate' ? 'btn-primary' : 'btn-danger'}`} >Create Account!</button>
+                            <button className={`btn btn-block ${changeType === 'Individual' ? 'btn-warning' : changeType === 'Corporate' ? 'btn-primary' : 'btn-danger'}`}
+                                onClick={onPageChange}
+                            >Create Account!</button>
                         </div>
                     </div>
                 </div>
