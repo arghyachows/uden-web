@@ -3,7 +3,12 @@ import './Register.scss'
 import facebook from '../../assets/facebook.svg'
 import google from '../../assets/google.svg'
 import linkedin from '../../assets/linkedin.svg'
+
+const { useState } = React
+
 const Register = () => {
+
+    const [changeType, setchangeType] = useState('Individual')
 
     return (
         <div className="col-md-12">
@@ -14,13 +19,19 @@ const Register = () => {
                 <div className="col-md-12 text-center">
                     <div className="row">
                         <div className="col-md-4">
-                            <button className={`btn btn-block font-weight-bold btn-warning`} >Individual</button>
+                            <button className={`btn btn-block font-weight-bold ${changeType === 'Individual' ? 'btn-warning' : ''} `} onClick={() => {
+                                setchangeType('Individual')
+                            }}>Individual</button>
                         </div>
                         <div className="col-md-4">
-                            <button className={`btn btn-block font-weight-bold btn-primary`} >Corporate</button>
+                            <button className={`btn btn-block font-weight-bold ${changeType === 'Corporate' ? 'btn-primary' : ''} `} onClick={() => {
+                                setchangeType('Corporate')
+                            }} >Corporate</button>
                         </div>
                         <div className="col-md-4">
-                            <button className={`btn btn-block font-weight-bold btn-danger`} >Educator</button>
+                            <button className={`btn btn-block font-weight-bold ${changeType === 'Educator' ? 'btn-danger' : ''} `} onClick={() => {
+                                setchangeType('Educator')
+                            }} >Educator</button>
                         </div>
                     </div>
                 </div>
@@ -51,7 +62,7 @@ const Register = () => {
                             <input type="password" className="form-control" id="password" />
                         </div>
                         <div className="form-group">
-                            <p className="small">Make sure it’s <span className={`text-primary`}>at least 15 characters</span> OR at least 8 characters including a number and a lowercase letter. <a href="/">Learn More</a></p>
+                            <p className="small">Make sure it’s <span className={`${changeType === 'Individual' ? 'text-warning' : changeType === 'Corporate' ? 'text-primary' : 'text-danger'}`}>at least 15 characters</span> OR at least 8 characters including a number and a lowercase letter. <a href="/">Learn More</a></p>
                         </div>
                     </form>
 
@@ -60,7 +71,7 @@ const Register = () => {
                 <div className="col-md-12 mx-auto">
                     <div className="row">
                         <div className="col-md-4 mx-auto">
-                            <button className={`btn btn-block btn-primary`} >Create Account!</button>
+                            <button className={`btn btn-block ${changeType === 'Individual' ? 'btn-warning' : changeType === 'Corporate' ? 'btn-primary' : 'btn-danger'}`} >Create Account!</button>
                         </div>
                     </div>
                 </div>
